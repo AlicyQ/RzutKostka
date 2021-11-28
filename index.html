@@ -93,23 +93,25 @@
             let x = Math.floor(Math.random() * 6) + 1;
             console.log("Wylosowana liczba: " + x);
 
-            if (x == 1) {
-                img = document.getElementById("img1");
-            }
-            else if (x == 2) {
-                img = document.getElementById("img2");
-            }
-            else if (x == 3) {
-                img = document.getElementById("img3");
-            }
-            else if (x == 4) {
-                img = document.getElementById("img4");
-            }
-            else if (x == 5) {
-                img = document.getElementById("img5");
-            }
-            else {
-                img = document.getElementById("img6");
+            switch (x) {
+                case 1:
+                    img = document.getElementById("img1");
+                    break;
+                case 2:
+                    img = document.getElementById("img2");
+                    break;
+                case 3:
+                    img = document.getElementById("img3");
+                    break;
+                case 4:
+                    img = document.getElementById("img4");
+                    break;
+                case 5:
+                    img = document.getElementById("img5");
+                    break;
+                case 6:
+                    img = document.getElementById("img6");
+                    break;
             }
             img.style.transform = "scale(1)";
             img.style.transition = "transform 0.25s ease";
