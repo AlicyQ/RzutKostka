@@ -1,0 +1,144 @@
+﻿<!--Alicja Kapral 1 pb-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Rzut kostką</title>
+    <link rel="icon" href="https://www.emojimeaning.com/img/img-apple-160/1f3b2.png" />
+
+    <style>
+        body {
+            background-color: #5e4b61;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 75px;
+        }
+
+        .button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 25px 40px;
+            font-size: 22px;
+            border-radius: 12px;
+        }
+
+        .p {
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 95%;
+            text-align: right;
+            font-size: 30px;
+        }
+
+        .scale {
+            transform: scale(0);
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -250px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <br /><br />
+
+    <h1>Rzut kostką</h1>
+
+    <center><button class="button" onclick="Clicks()">Rzuć</button></center>
+    <br />
+    <center><button class="button" onclick="Reset()">Resetuj</button></center>
+    <br />
+    <center><button class="button" onclick="Refresh()">Odśwież stronę</button></center>
+
+    <div>
+        <img src="kostka1.png" id="img1" class="scale" />
+        <img src="kostka2.png" id="img2" class="scale" />
+        <img src="kostka3.png" id="img3" class="scale" />
+        <img src="kostka4.png" id="img4" class="scale" />
+        <img src="kostka5.png" id="img5" class="scale" />
+        <img src="kostka6.png" id="img6" class="scale" />
+    </div>
+
+    <script>
+        var counter = 0;
+        function onClick() {
+            counter++;
+            console.log("Ilość kliknięć: " + counter);
+        }
+
+        function Function() {
+
+            if (counter > 1) {
+                img.style.transform = "scale(0)";
+                img.style.transition = "transform 0.25s ease";
+            }
+
+            let x = Math.floor(Math.random() * 6) + 1;
+            console.log("Wylosowana liczba: " + x);
+
+            if (x == 1) {
+                img = document.getElementById("img1");
+            }
+            else if (x == 2) {
+                img = document.getElementById("img2");
+            }
+            else if (x == 3) {
+                img = document.getElementById("img3");
+            }
+            else if (x == 4) {
+                img = document.getElementById("img4");
+            }
+            else if (x == 5) {
+                img = document.getElementById("img5");
+            }
+            else {
+                img = document.getElementById("img6");
+            }
+            img.style.transform = "scale(1)";
+            img.style.transition = "transform 0.25s ease";
+
+            alert("Wylosowana liczba: " + x);
+        }
+
+
+        function Clicks() {
+            onClick();
+            Function();
+        }
+
+        function Reset() {
+            img.style.transform="scale(0)";
+        }
+
+        function Refresh() {
+            window.location.reload();
+        }
+
+    </script>
+
+
+    <p class="p">Alicja Kapral 1pb</p>
+
+</body>
+
+
+</html>
+
+<!--Alicja Kapral 1 pb-->
